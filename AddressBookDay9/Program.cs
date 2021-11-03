@@ -8,7 +8,7 @@ namespace AddressBookDay9
         static void Main(string[] args)
         {
             //uc1 adding contact details in addressbook
-            //Addressbook addressBook = new Addressbook();
+            Addressbook addressBook = new Addressbook();
             Console.WriteLine("enter first name:");
             string firstname = Console.ReadLine();
             Console.WriteLine("enter last name:");
@@ -26,7 +26,7 @@ namespace AddressBookDay9
             Console.WriteLine("enter mail id");
             string email = Console.ReadLine();
 
-         
+            addressBook.AddEntry(firstname, lastname, address, city, state, phonenumber, zip, email);
 
 
 
