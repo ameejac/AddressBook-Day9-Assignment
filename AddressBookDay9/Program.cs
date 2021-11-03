@@ -29,6 +29,12 @@ namespace AddressBookDay9
             addressBook.AddEntry(firstname, lastname, address, city, state, phonenumber, zip, email);
 
 
+           // addressBook.updatecontact(firstname);
+
+
+            addressBook.RemoveEntry(firstname);
+
+
 
         }
     }
