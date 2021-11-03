@@ -68,6 +68,7 @@ namespace AddressBookDay9
         }
 
 
+<<<<<<< HEAD
         //uc4 remove contacts in addressbook
 
         public void RemoveEntry(string name)
@@ -94,6 +95,9 @@ namespace AddressBookDay9
             }
 
         }
+=======
+       
+>>>>>>> uc3-update-contacts-addressbook
 
 
 

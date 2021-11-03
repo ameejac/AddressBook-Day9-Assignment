@@ -29,10 +29,16 @@ namespace AddressBookDay9
             addressBook.AddEntry(firstname, lastname, address, city, state, phonenumber, zip, email);
 
 
+<<<<<<< HEAD
            // addressBook.updatecontact(firstname);
 
 
             addressBook.RemoveEntry(firstname);
+=======
+           addressBook.updatecontact(firstname);
+
+
+>>>>>>> uc3-update-contacts-addressbook
 
 
 
