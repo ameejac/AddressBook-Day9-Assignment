@@ -29,19 +29,36 @@ namespace AddressBookDay9
             addressBook.AddEntry(firstname, lastname, address, city, state, phonenumber, zip, email);
 
 
-<<<<<<< HEAD
-           // addressBook.updatecontact(firstname);
+            Console.WriteLine("enter first name:");
+            string firstname1 = Console.ReadLine();
+            Console.WriteLine("enter last name:");
+            string lastname1 = Console.ReadLine();
+            Console.WriteLine("enter address:");
+            string address1 = Console.ReadLine();
+            Console.WriteLine("enter cityname:");
+            string city1 = Console.ReadLine();
+            Console.WriteLine("enter state name:");
+            string state1 = Console.ReadLine();
+            Console.WriteLine("enter phone number");
+            int phonenumber1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter zip number:");
+            int zip1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter mail id");
+            string email1 = Console.ReadLine();
 
 
-            addressBook.RemoveEntry(firstname);
-=======
-           addressBook.updatecontact(firstname);
+            addressBook.AddEntry(firstname1, lastname1, address1, city1, state1, phonenumber1, zip1, email1);
 
 
->>>>>>> uc3-update-contacts-addressbook
+          // addressBook.updatecontact(firstname);
+
+            addressBook.ViewContactsList();
+           
+
 
 
 
         }
     }
 }
+

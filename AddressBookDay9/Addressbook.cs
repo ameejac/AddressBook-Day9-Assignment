@@ -7,27 +7,56 @@ namespace AddressBookDay9
         public readonly Contact[] contacts;
         public Addressbook()
         {
-            contacts = new Contact[7];
+            contacts = new Contact[2];
         }
         //uc4 add contacts in addressbook
-        public bool AddEntry(string firstname, string lastname, string address, string city, string state, int phonenum, int zip, String email)
+            public bool AddEntry(string firstname, string lastname, string address, string city, string state, int phonenum, int zip, String email)
+            {
+                Console.WriteLine("ContainsEntry:" + ContainsEntry(firstname));
+                if (!ContainsEntry(firstname))
+                {
+                    Contact addcontact = new Contact(firstname, lastname, address, city, state, phonenum, zip, email);
+                    Console.WriteLine("if issssssssssss");
+                    contacts[0] = addcontact;
+                    Console.WriteLine("firstNAme" + contacts[0].Firstname);
+
+                }
+                else
+                {
+                    Console.WriteLine($"({firstname}) already exists in Address Book!");
+
+                }
+                return false;
+            }
+
+
+        public bool AddMultiplePersondata(string firstname, string lastname, string address, string city, string state, int phonenum, int zip, String email)
         {
-            Console.WriteLine("ContainsEntry:" + ContainsEntry(firstname));
             if (!ContainsEntry(firstname))
             {
-                Contact addcontact = new Contact(firstname, lastname, address, city, state, phonenum, zip, email);
-                Console.WriteLine("if issssssssssss");
-                contacts[0] = addcontact;
-                Console.WriteLine("firstNAme" + contacts[0].Firstname);
+                Contact AddContact = new Contact(firstname, lastname, address, city, state, phonenum, zip, email);
 
+                for (int i = 0; i < contacts.Length; i++)
+                {
+                    if (contacts[i] == null)
+                    {
+                        contacts[i] = AddContact;
+                        Console.WriteLine("Address Book updated. {0} has been added!", firstname);
+     
+                        return true;
+                    }
+                }
+                Console.WriteLine($"Cannot add ({firstname}) to Address Book since it is full!");
+                return false;
             }
             else
             {
                 Console.WriteLine($"({firstname}) already exists in Address Book!");
-
+               // UpdateContact(name);
             }
             return false;
         }
+
         private bool ContainsEntry(string firstname)
         {
             return GetEntryIndex(firstname) != -1;
@@ -66,40 +95,22 @@ namespace AddressBookDay9
             }
             return false;
         }
-
-
-<<<<<<< HEAD
-        //uc4 remove contacts in addressbook
-
-        public void RemoveEntry(string name)
+        public string ViewContactsList()
         {
-            Console.WriteLine("would you like to remove the cotact data in addressbook .type y or no:");
-            string removeData = Console.ReadLine().ToLower();
-
-
-            if (removeData == "y")
+            string contactList = "";
+            Console.WriteLine("contactlist" + contacts.Length);
+            foreach (Contact contact in contacts)
             {
-                Console.WriteLine("please enter the remove contact data");
-                string removeContact = Console.ReadLine();
-
-                var index = GetEntryIndex(name);
-                if (index != -1)
+                if (contact == null)
                 {
-                    contacts[index] = null;
-                    Console.WriteLine("{0} removed from contacts"+name);
+                    continue;
                 }
+                Console.WriteLine("contactlist"+ contact.Firstname);
+                contactList += String.Format("Name: {0} -- Address: {1}" + Environment.NewLine, contact.Firstname, contact.State);
+           
+            
             }
-            else
-            {
-                Console.WriteLine("data is not update:");
-            }
-
+            return (contactList != String.Empty) ? contactList : "Your Address Book is empty.";
         }
-=======
-       
->>>>>>> uc3-update-contacts-addressbook
-
-
-
     }
 }
