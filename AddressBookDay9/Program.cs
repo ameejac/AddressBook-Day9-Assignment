@@ -28,7 +28,8 @@ namespace AddressBookDay9
 
             addressBook.AddEntry(firstname, lastname, address, city, state, phonenumber, zip, email);
 
-
+            //add person data in multipull addressbook
+            Addressbook addressBook1 = new Addressbook();
             Console.WriteLine("enter first name:");
             string firstname1 = Console.ReadLine();
             Console.WriteLine("enter last name:");
@@ -46,13 +47,13 @@ namespace AddressBookDay9
             Console.WriteLine("enter mail id");
             string email1 = Console.ReadLine();
 
-
-            addressBook.AddEntry(firstname1, lastname1, address1, city1, state1, phonenumber1, zip1, email1);
+            Console.WriteLine("refctor multiple addressbook1 :" + addressBook1);
+            addressBook1.AddEntry(firstname1, lastname1, address1, city1, state1, phonenumber1, zip1, email1);
 
 
           // addressBook.updatecontact(firstname);
 
-            addressBook.ViewContactsList();
+            //addressBook.ViewContactsList();
            
 
 

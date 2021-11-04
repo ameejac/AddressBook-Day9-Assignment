@@ -16,9 +16,9 @@ namespace AddressBookDay9
                 if (!ContainsEntry(firstname))
                 {
                     Contact addcontact = new Contact(firstname, lastname, address, city, state, phonenum, zip, email);
-                    Console.WriteLine("if issssssssssss");
+                    Console.WriteLine("firstname:"+ firstname);
                     contacts[0] = addcontact;
-                    Console.WriteLine("firstNAme" + contacts[0].Firstname);
+                    Console.WriteLine("firstName" + contacts[0].Firstname);
 
                 }
                 else
